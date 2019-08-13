@@ -1,7 +1,12 @@
 <div class="upload-form">
-  <%= form_tag() do %>
-    <%= label_tag "Upload a photo" %>
-    <%= file_field_tag :file %>
+  <%# multipart => true is some magic thing that allows files to be transferred %>
+  <%= form_tag photos_path, {:multipart => true} do %>
+    <%= label_tag "Upload file" %>
+    <%= file_field_tag :image %>
+    <%= label_tag "Title" %>
+    <%= text_field_tag :title %>
+    <%= label_tag "Photo Caption" %>
+    <%= text_area_tag :caption %>
     <%= submit_tag "Upload" %>
   <% end %>
 </div>

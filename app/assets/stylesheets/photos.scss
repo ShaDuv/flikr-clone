@@ -14,3 +14,29 @@ input {
   width: 33%;
   margin: auto;
 }
+
+.photo-card{
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-bottom: 30px;
+  border: 1px lightgray solid;
+  border-radius: 5px;
+}
+
+.photo-card h3{
+  margin-left: 10%;
+  margin-top: 1%;
+}
+
+.photo-card p{
+  margin-left: 10%;
+}
+
+.image-holder {
+  height: 400px;
+  text-align: center;
+}
+.image-holder img{
+  height: 100%;
+}

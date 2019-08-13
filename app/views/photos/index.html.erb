@@ -1,0 +1,11 @@
+<% @photos.each do |p| %>
+  <% if p.image_file.attached? %>
+    <div class="photo-card">
+      <h3><%= p.title %></h3>
+      <p><%= p.caption %></p>
+      <div class="image-holder">
+        <%= image_tag url_for(p.image_file) %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
