@@ -1,1 +1,14 @@
-<h2>This is an h3 for the welcome controller</h2>
+<% if @featured_users.any? %>
+
+  <% @featured_users.each do |u|%>
+    <% photos = u.photos.all %>
+    <% photos.each do |p| %>
+      <div class="photo-card">
+        <h3><%= p.title %></h3>
+        <div class="image-holder">
+          <%= image_tag url_for(p.image_file) %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>

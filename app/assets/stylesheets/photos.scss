@@ -17,7 +17,7 @@ input {
 
 .photo-card{
   width: 500px;
-  height: 500px;
+  max-height: 600px;
   margin: auto;
   margin-bottom: 30px;
   border: 1px lightgray solid;
@@ -36,7 +36,10 @@ input {
 .image-holder {
   height: 400px;
   text-align: center;
+  margin-bottom: 30px;
 }
 .image-holder img{
+  object-fit: cover;
   height: 100%;
+  width: 100%;
 }
