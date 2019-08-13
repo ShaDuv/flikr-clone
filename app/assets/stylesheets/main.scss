@@ -16,3 +16,15 @@
 .nav-item-right{
   float: right;
 }
+
+.upload-form label,input{
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+
+}
+
+.upload-form textarea{
+  width: 100%;
+  height: 100px;
+}

@@ -1,7 +1,8 @@
 class WelcomeController < ApplicationController
 
   def index
-    @featured_users = User.all.limit(15)
+    @users = User.all
+    @featured_users = @users.sample(15)
     render :index
   end
 end

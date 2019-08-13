@@ -1,3 +1,10 @@
+<% if !@photos.any? %>
+  <div class="upload-alert photo-card">
+    <h4>Upload some photos!</h4>
+    <%= link_to "Upload", new_user_photo_path, :class=>"upload-btn btn btn-info" %>
+  </div>
+<% end %>
+
 <% @photos.each do |p| %>
   <% if p.image_file.attached? %>
     <div class="photo-card">
