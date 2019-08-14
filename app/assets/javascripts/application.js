@@ -14,5 +14,17 @@
 // = require activestorage
 // = require turbolinks
 // = require_tree .
+// LOOK MOM NO JQUERY
 
-import 'photo_buttons.js'
+window.onload = function(){
+
+  if (document.getElementById('pre-delete')) {
+    document.getElementById('pre-delete').addEventListener("click",function(){
+      document.getElementById('pre-delete').classList.add("hidden");
+      document.getElementById('confirm-delete').classList.remove("hidden");
+
+    });
+
+  }
+
+};
