@@ -23,6 +23,7 @@ window.onload = function(){
       document.getElementById('pre-delete').classList.add("hidden");
       document.getElementById('confirm-delete').classList.remove("hidden");
 
+    
     });
 
   }

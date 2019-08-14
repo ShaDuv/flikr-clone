@@ -23,13 +23,16 @@ Dir.chdir('sample_photos')
   rand_email = Faker::Internet.unique.email
   rand_title = Faker::Hipster.sentence(word_count:3)
   rand_caption = Faker::Hipster.sentence
+
   user = User.new(:username => rand_username, :password => rand_password, :email => rand_email )
   user.save
   # this is a funky solution to work with ActiveStorage
   f = {:io => File.open("image_#{counter.to_s}.jpg"), :filename => "image_#{counter.to_s}", :content_type => 'image/jpg'}
+
   photo = user.photos.new(:title => rand_title, :caption => rand_caption)
-  if photo.image_file.attach(f)
-    p "Image attached!"
-  end
+
+  photo.image_file.attach(f)
+
+
   photo.save
 end
