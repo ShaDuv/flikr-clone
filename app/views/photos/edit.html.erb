@@ -1,0 +1,14 @@
+<div class="photo-card">
+  <%= form_tag user_photo_path(@photo), method:"patch" do %>
+  <%= label_tag "Title:" %>
+  <%= text_field_tag :title, @photo.title %>
+  <div class="image-holder">
+    <%= image_tag url_for(@photo.image_file) %>
+  </div>
+  <%= label_tag "Caption:" %>
+  <%= text_area_tag :caption, @photo.caption %>
+  <div class="photo-card-buttons">
+    <%= submit_tag "Save Photo", :class=>"btn btn-primary btn-sm" %>
+  </div>
+  <% end %>
+</div>

@@ -13,6 +13,11 @@
       <div class="image-holder">
         <%= image_tag url_for(p.image_file) %>
       </div>
+      <div class="photo-card-buttons">
+        <%= link_to "Edit Photo", edit_user_photo_path(current_user, p), :class=>"btn btn-primary btn-sm" %>
+        <%= link_to "Delete Photo", "javascript:void(0)", :class=>"btn btn-secondary btn-sm", :id=>"pre-delete" %>
+        <%= link_to "Are You Sure?", user_photo_path(current_user, p), :class=>"btn btn-danger btn-sm hidden", :method => "delete", :id=>"confirm-delete" %>
+      </div>
     </div>
   <% end %>
 <% end %>

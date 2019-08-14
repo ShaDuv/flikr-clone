@@ -23,5 +23,24 @@ class PhotosController < ApplicationController
   end
 
   def update
+    new_title = params[:title]
+    new_caption = params[:caption]
+    @photo = Photo.find_by_id(params[:id])
+    @photo.title = new_title
+    @photo.caption = new_caption
+    @photo.save
+    redirect_to user_photos_path(current_user)
+  end
+
+  def edit
+    @user = current_user
+    @photo = Photo.find_by_id(params[:id])
+    render :edit
+  end
+
+  def destroy
+    @photo = Photo.find_by_id(params[:id])
+    @photo.destroy
+    redirect_to user_photos_path(current_user)
   end
 end

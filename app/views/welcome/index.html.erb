@@ -1,13 +1,14 @@
 <% if @featured_users.any? %>
 
   <% @featured_users.each do |u|%>
-    <% photos = u.photos.all %>
-    <% photos.each do |p| %>
+  <% if u.photos.any? %>
+    <% photo = u.photos.all.first %>
+
       <div class="photo-card">
-        <h3><%= p.title %></h3>
-        <p>Taken by: <%= p.user.username %></p>
+        <h3><%= photo.title %></h3>
+        <p>Taken by: <%= photo.user.username %></p>
         <div class="image-holder">
-          <%= image_tag url_for(p.image_file) %>
+          <%= image_tag url_for(photo.image_file) %>
         </div>
       </div>
     <% end %>

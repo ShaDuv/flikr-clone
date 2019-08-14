@@ -7,6 +7,6 @@ class User < ApplicationRecord
 
   has_many :photos
 
-  attr_accessor :username
+  # attr_accessor :username
 
 end
